@@ -9,8 +9,7 @@ fi
 
 # Username, SSH keys, and location of the user's home directory for the new user
 new_user=cameron
-ssh_key1="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKIukxLRRwpbgDxqcsdRY77i7T+Ptsrs8J9tfNrWncHK"
-ssh_key2="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO8Nsh7r7SoYZD2JZolMZCJVT9O6OkKlQuQl27YlqQVy"
+ssh_key1="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOhUSbmv/3Q0vMYLdaNLGcBwvNpGKjLSeBdf/z+JETO1"
 home_dir=/home/$new_user
 
 # Create the new user and add them to the sudo group
@@ -25,7 +24,6 @@ sudo chown $new_user:$new_user $home_dir/.bash_aliases
 mkdir $home_dir/.ssh
 chmod 700 $home_dir/.ssh
 echo $ssh_key1 >> $home_dir/.ssh/authorized_keys
-echo $ssh_key2 >> $home_dir/.ssh/authorized_keys
 chmod 600 $home_dir/.ssh/authorized_keys
 chown -R $new_user:$new_user $home_dir/.ssh
 
